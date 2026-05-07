@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <PackageId>TinyBlueWhale.MiniBus</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>TinyBlueWhaleDev</Authors>
+    <Company>TinyBlueWhaleDev</Company>
+    <Product>TinyBlueWhale.MiniBus</Product>
+
+    <Description>Minimal high-performance in-process mediator for .NET. Focused on Send and Publish with minimal allocations and fast startup.</Description>
+    <PackageTags>mediator;cqrs;messaging;events;minimal-api;performance;dotnet</PackageTags>
+
+    <RepositoryUrl>https://github.com/TinyBlueWhaleDev/MiniBus</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
