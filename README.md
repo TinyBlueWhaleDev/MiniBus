@@ -1,5 +1,9 @@
 # TinyBlueWhale.MiniBus
 
+[![NuGet](https://img.shields.io/nuget/v/TinyBlueWhale.MiniBus.svg)](https://www.nuget.org/packages/TinyBlueWhale.MiniBus)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/TinyBlueWhale.MiniBus)](https://www.nuget.org/packages/TinyBlueWhale.MiniBus)
+![build](https://github.com/TinyBlueWhaleDev/MiniBus/actions/workflows/build.yml/badge.svg)
+
 Minimal high-performance in-process mediator for .NET.
 
 Focused only on what most applications actually use every day:
