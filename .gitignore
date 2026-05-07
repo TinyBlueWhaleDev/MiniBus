@@ -1,0 +1,54 @@
+# Build
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Test Results
+TestResults/
+
+# BenchmarkDotNet
+BenchmarkDotNet.Artifacts/
+
+# NuGet
+*.nupkg
+*.snupkg
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+coverage-report/
+
+# Temp
+tmp/
+temp/
+
+# Generated
+Generated/
+
+# Publish
+publish/
+
+# Azure
+.publish/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
