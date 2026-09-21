@@ -1,16 +1,22 @@
-﻿namespace TinyBlueWhale.MiniBus.Example.ECommerce.Features.Orders.CreateOrder
+﻿using TinyBlueWhale.MiniBus.Abstractions;
+
+namespace TinyBlueWhale.MiniBus.Example.ECommerce.Features.Orders.CreateOrder
 {
     public static class CreateOrderEndpoint
     {
-        public static IEndpointRouteBuilder MapCreateOrderEndpoint(
-            this IEndpointRouteBuilder endpoints)
+        public static IEndpointRouteBuilder MapCreateOrderEndpoint(this IEndpointRouteBuilder endpoints)
         {
-            endpoints.MapPost("/orders", CreateOrder);
+            endpoints.MapPost("/orders", CreateOrder)
+                .WithName("CreateOrder")
+                .WithTags("Orders");
 
             return endpoints;
         }
 
-        private static async Task<IResult> CreateOrder(CreateOrderRequest request,IMiniBus miniBus, CancellationToken cancellationToken)
+        private static async Task<IResult> CreateOrder(
+            CreateOrderRequest request,
+            IMiniBus miniBus,
+            CancellationToken cancellationToken)
         {
             var command = new CreateOrderCommand(
                 request.CustomerEmail,
@@ -18,14 +24,10 @@
 
             var orderId = await miniBus.Send(command, cancellationToken);
 
-            return Results.Created($"/orders/{orderId}", new
-            {
-                OrderId = orderId
-            });
+            return Results.Created($"/orders/{orderId}", new CreateOrderResponse(orderId));
         }
     }
 
-    public sealed record CreateOrderRequest(
-        string CustomerEmail,
-        decimal TotalAmount);
+    public sealed record CreateOrderRequest(string CustomerEmail, decimal TotalAmount);
+    public sealed record CreateOrderResponse(Guid OrderId);
 }

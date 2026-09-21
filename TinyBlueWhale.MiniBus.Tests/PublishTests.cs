@@ -1,9 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TinyBlueWhale.MiniBus.Abstractions;
+using TinyBlueWhale.MiniBus.DependencyInjection;
 
 namespace TinyBlueWhale.MiniBus.Tests
 {
@@ -21,7 +18,7 @@ namespace TinyBlueWhale.MiniBus.Tests
         {
             var miniBus = CreateMiniBus();
 
-            await miniBus.Publish(new UserCreatedEvent(Guid.NewGuid(),"user@test.com"));
+            await miniBus.Publish(new UserCreatedEvent(Guid.NewGuid(), "user@test.com"));
 
             Assert.Multiple(() =>
             {

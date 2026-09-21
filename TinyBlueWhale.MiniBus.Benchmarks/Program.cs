@@ -8,10 +8,10 @@
 //    sb.AppendLine($$"""
 //   public record Request{{i}}(int Id) :
 //       MediatR.IRequest<int>,
-//       TinyBlueWhale.MiniBus.IRequest<int>;
+//       TinyBlueWhale.MiniBus.Abstractions.IRequest<int>;
 //   public class Request{{i}}Handler :
 //       MediatR.IRequestHandler<Request{{i}}, int>,
-//       TinyBlueWhale.MiniBus.IRequestHandler<Request{{i}}, int>
+//       TinyBlueWhale.MiniBus.Abstractions.IRequestHandler<Request{{i}}, int>
 //   {
 //       public Task<int> Handle(Request{{i}} request, CancellationToken cancellationToken)
 //           => Task.FromResult(request.Id);
@@ -30,7 +30,7 @@
 //{
 //    sb.AppendLine($$"""
 //   public class UserCreatedEvent{{i}}Handler :
-//       TinyBlueWhale.MiniBus.IEventHandler<UserCreatedEvent>,
+//       TinyBlueWhale.MiniBus.Abstractions.IEventHandler<UserCreatedEvent>,
 //       MediatR.INotificationHandler<UserCreatedEvent>
 //   {
 //       public Task Handle(UserCreatedEvent e, CancellationToken cancellationToken)

@@ -1,24 +1,28 @@
-﻿namespace TinyBlueWhale.MiniBus.Example.ECommerce.Features.Orders.CreateOrder
-{
-    public sealed class CreateOrderHandler(IMiniBus miniBus)
-        : IRequestHandler<CreateOrderCommand, Guid>
-    {
-        private readonly IMiniBus _miniBus = miniBus;
+﻿using TinyBlueWhale.MiniBus.Abstractions;
 
+namespace TinyBlueWhale.MiniBus.Example.ECommerce.Features.Orders.CreateOrder
+{
+    public sealed class CreateOrderHandler(IMiniBus miniBus, OrderStore orderStore) : IRequestHandler<CreateOrderCommand, Guid>
+    {
         public async Task<Guid> Handle(CreateOrderCommand request, CancellationToken cancellationToken = default)
         {
             await Task.Delay(20, cancellationToken);
 
-            var orderId = Guid.NewGuid();
+            var order = new Order(
+                Guid.NewGuid(),
+                request.CustomerEmail,
+                request.TotalAmount);
 
-            await _miniBus.Publish(
+            orderStore.Add(order);
+
+            await miniBus.Publish(
                 new OrderCreatedEvent(
-                    orderId,
-                    request.CustomerEmail,
-                    request.TotalAmount),
+                    order.Id,
+                    order.CustomerEmail,
+                    order.TotalAmount),
                 cancellationToken);
 
-            return orderId;
+            return order.Id;
         }
-    }
+    }    
 }
