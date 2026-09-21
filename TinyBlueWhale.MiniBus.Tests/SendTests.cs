@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using NUnit.Framework;
+using TinyBlueWhale.MiniBus.Abstractions;
+using TinyBlueWhale.MiniBus.DependencyInjection;
 
 namespace TinyBlueWhale.MiniBus.Tests;
 
@@ -43,7 +44,12 @@ public sealed class SendTests
         Assert.Multiple(() =>
         {
             Assert.That(exception, Is.Not.Null);
-            Assert.That(exception!.Message, Does.Contain("No handler registered"));
+            Assert.That(
+                exception!.Message,
+                Does.Contain("No request handler registered"));
+            Assert.That(
+                exception.Message,
+                Does.Contain(typeof(MissingHandlerQuery).FullName));
         });
     }
 

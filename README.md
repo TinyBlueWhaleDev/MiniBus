@@ -212,7 +212,7 @@ TinyBlueWhale.MiniBus keeps similar publish throughput with significantly lower 
 Repository includes a complete Minimal API example:
 
 ```text
-TinyBlueWhale.MiniBus.Example.ECommerce
+TinyBlueWhale.MiniBus.Abstractions.Example.ECommerce
 ```
 
 Includes:

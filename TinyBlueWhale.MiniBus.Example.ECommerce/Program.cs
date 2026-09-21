@@ -1,4 +1,4 @@
-using TinyBlueWhale.MiniBus;
+using TinyBlueWhale.MiniBus.DependencyInjection;
 using TinyBlueWhale.MiniBus.Example.ECommerce.Features.Orders.CreateOrder;
 
 var builder = WebApplication.CreateBuilder(args);
