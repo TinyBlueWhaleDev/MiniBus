@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TinyBlueWhale.MiniBus.TestAssets.Duplicates\TinyBlueWhale.MiniBus.TestAssets.Duplicates.csproj" />
+    <ProjectReference Include="..\TinyBlueWhale.MiniBus.TestAssets.Primary\TinyBlueWhale.MiniBus.TestAssets.Primary.csproj" />
+    <ProjectReference Include="..\TinyBlueWhale.MiniBus.TestAssets.Secondary\TinyBlueWhale.MiniBus.TestAssets.Secondary.csproj" />
     <ProjectReference Include="..\TinyBlueWhale.MiniBus\TinyBlueWhale.MiniBus.csproj" />
   </ItemGroup>
   
