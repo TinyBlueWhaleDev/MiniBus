@@ -6,25 +6,26 @@
     <Nullable>enable</Nullable>
 
     <PackageId>TinyBlueWhale.MiniBus</PackageId>
-    <Version>0.1.0</Version>
-    <Authors>TinyBlueWhaleDev</Authors>
-    <Company>TinyBlueWhaleDev</Company>
-    <Product>TinyBlueWhale.MiniBus</Product>
+    <Version>1.0.0</Version>
+    <Authors>Marco Garza</Authors>
+    <Company>TinyBlueWhale</Company>
+    <Product>MiniBus</Product>
+    <Copyright>Copyright © TinyBlueWhale. All rights reserved.</Copyright>
 
-    <Description>Minimal high-performance in-process mediator for .NET. Focused on Send and Publish with minimal allocations and fast startup.</Description>
-    <PackageTags>mediator;cqrs;messaging;events;minimal-api;performance;dotnet</PackageTags>
+    <Description>Minimal in-process mediator for .NET with request/response and event publishing support.</Description>
+    <PackageTags>dotnet;mediator;cqrs;messaging;events;minimal-api;minibus</PackageTags>
 
     <RepositoryUrl>https://github.com/TinyBlueWhaleDev/MiniBus</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/TinyBlueWhaleDev/MiniBus</PackageProjectUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
 
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>         
   </PropertyGroup>
 
   <ItemGroup>
