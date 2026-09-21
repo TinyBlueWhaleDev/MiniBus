@@ -8,8 +8,7 @@ namespace TinyBlueWhale.MiniBus.Example.ECommerce.Features.Orders.CreateOrder
         {
             await Task.Delay(5, cancellationToken);
 
-            Console.WriteLine(
-                $"Inventory updated for order '{@event.OrderId}'.");
+            Console.WriteLine($"Inventory updated for order '{@event.OrderId}'.");
         }
     }
 }
