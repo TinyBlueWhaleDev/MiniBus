@@ -1,4 +1,6 @@
-﻿namespace TinyBlueWhale.MiniBus.Example.ECommerce.Features.Orders.CreateOrder
+﻿using TinyBlueWhale.MiniBus.Abstractions;
+
+namespace TinyBlueWhale.MiniBus.Example.ECommerce.Features.Orders.CreateOrder
 {
     public static class CreateOrderEndpoint
     {
@@ -10,7 +12,7 @@
             return endpoints;
         }
 
-        private static async Task<IResult> CreateOrder(CreateOrderRequest request,IMiniBus miniBus, CancellationToken cancellationToken)
+        private static async Task<IResult> CreateOrder(CreateOrderRequest request, IMiniBus miniBus, CancellationToken cancellationToken)
         {
             var command = new CreateOrderCommand(
                 request.CustomerEmail,

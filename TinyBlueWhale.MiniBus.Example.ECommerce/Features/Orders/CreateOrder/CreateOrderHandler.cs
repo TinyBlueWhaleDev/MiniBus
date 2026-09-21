@@ -1,4 +1,6 @@
-﻿namespace TinyBlueWhale.MiniBus.Example.ECommerce.Features.Orders.CreateOrder
+﻿using TinyBlueWhale.MiniBus.Abstractions;
+
+namespace TinyBlueWhale.MiniBus.Example.ECommerce.Features.Orders.CreateOrder
 {
     public sealed class CreateOrderHandler(IMiniBus miniBus)
         : IRequestHandler<CreateOrderCommand, Guid>
