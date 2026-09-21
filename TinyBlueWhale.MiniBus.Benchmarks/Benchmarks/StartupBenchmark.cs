@@ -1,8 +1,10 @@
 ﻿using BenchmarkDotNet.Attributes;
 using Microsoft.Extensions.DependencyInjection;
 using MiniBus.Benchmarks.Handlers;
-using TinyBlueWhale.MiniBus;
+using TinyBlueWhale.MiniBus.DependencyInjection;
+
 namespace MiniBus.Benchmarks.Benchmarks;
+
 [MemoryDiagnoser]
 public class StartupBenchmark
 {

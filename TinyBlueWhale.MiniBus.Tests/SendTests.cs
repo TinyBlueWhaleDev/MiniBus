@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using NUnit.Framework;
+using TinyBlueWhale.MiniBus.Abstractions;
+using TinyBlueWhale.MiniBus.DependencyInjection;
 
 namespace TinyBlueWhale.MiniBus.Tests;
 
@@ -40,11 +41,10 @@ public sealed class SendTests
         var exception = Assert.ThrowsAsync<InvalidOperationException>(async () =>
             await miniBus.Send(new MissingHandlerQuery(Guid.NewGuid())));
 
-        Assert.Multiple(() =>
-        {
-            Assert.That(exception, Is.Not.Null);
-            Assert.That(exception!.Message, Does.Contain("No handler registered"));
-        });
+        Assert.That(
+            exception!.Message,
+            Is.EqualTo(
+                $"No request handler registered for '{typeof(MissingHandlerQuery).FullName}'."));
     }
 
     [Test]

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFrameworks>net9.0;net10.0</TargetFrameworks>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.2" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.15" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.12" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
     <PackageReference Include="NUnit" Version="4.2.2" />
     <PackageReference Include="NUnit.Analyzers" Version="4.4.0" />
@@ -18,8 +18,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TinyBlueWhale.MiniBus.TestAssets.Duplicates\TinyBlueWhale.MiniBus.TestAssets.Duplicates.csproj" />
+    <ProjectReference Include="..\TinyBlueWhale.MiniBus.TestAssets.Primary\TinyBlueWhale.MiniBus.TestAssets.Primary.csproj" />
+    <ProjectReference Include="..\TinyBlueWhale.MiniBus.TestAssets.Secondary\TinyBlueWhale.MiniBus.TestAssets.Secondary.csproj" />
     <ProjectReference Include="..\TinyBlueWhale.MiniBus\TinyBlueWhale.MiniBus.csproj" />
   </ItemGroup>
+  
 
   <ItemGroup>
     <Using Include="NUnit.Framework" />
